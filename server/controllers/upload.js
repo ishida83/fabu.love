@@ -273,6 +273,9 @@ async function extractIpaIcon(filename, guid, team) {
 function parseApk(filename) {
     return new Promise((resolve, reject) => {
         apkParser3(filename, (err, data) => {
+            if(err){
+                reject(err);
+            }
             var apkPackage = parseText(data.package)
             console.log(data)
             console.log("----------------")

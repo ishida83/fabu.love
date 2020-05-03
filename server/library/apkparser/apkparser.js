@@ -10,7 +10,7 @@ parseApk = function(filename, cb) {
   var exeName = null;
   if (os.type() === 'Darwin') {
       exeName = 'aapt-osx';
-  } else if (os.type() === 'Linux') {
+  } else if (os.type() === 'Linux' || os.type()==='Windows_NT') {
       exeName = 'aapt-linux';
   } else {
       throw new Error('Unknown OS!');
